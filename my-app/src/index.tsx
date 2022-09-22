@@ -5,6 +5,9 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const client = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +15,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <QueryClientProvider client={client}>
+        <App />
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

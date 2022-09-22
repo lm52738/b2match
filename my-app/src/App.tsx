@@ -1,13 +1,13 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import BookList from './pages/BookList';
-import Book from './pages/Book';
+import List from './pages/List';
+import Item from './pages/Item';
 
 function App() {
   return (
      <Routes>
-      <Route path="/" element={<BookList />} />
-      <Route path="/book/:id" element={<Book />} />
+      <Route path="/" element={<List />} />
+      <Route path="/item/:id" element={<Item />} />
      </Routes>
   );
 }
